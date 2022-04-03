@@ -37,7 +37,7 @@ npm install -g firebase-tools
 Using webpack to bundle code
 - [Webpack Config](https://webpack.js.org/configuration/)
 
-Look at the webpack.config.js file to understand config options in this project.
+Look at the `webpack.config.js` file to understand config options in this project.
 
 ## Bundle and Send
 Run to create a bundle.js file that will be placed into public folder
