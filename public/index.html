@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aphrodite Mirror Control</title>
+
+    <!-- FIREBASE -->
+    <script defer src="/__/firebase/9.6.6/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.6/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.6/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="notif-containers" id="notif-container">
+            <div class="inner-notif-container">
+                <span id="notif-title">TITLE</span>
+            </div>
+            <div class="inner-notif-container">
+                <span id="notif-desc">Description of notif</span>
+            </div>
+        </div>
+        <!-- LOGIN / REG CONTAINER -->
+        <div class="floating-containers" id="login-container">
+            <div class="inner-floating-containers" id="form-container">
+                <div id="form-header-container">
+                    <div id="form-header-label">
+                        <span id="form-header">Login</span>
+                    </div>
+                    <div id="lr-switch-container">
+                        <input name="lr-switch" id="lr-switch" type="checkbox"></input>
+                        <label id="lr-switch-label" for="lr-switch"><span
+                                id="lr-switch-label-span">Register?</span></label>
+                    </div>
+                </div>
+                <div id="form-content-container">
+                    <form class="form-signin">
+                        <input class="form-inputs" type="text" id="full_name" placeholder="Name" title="Name">
+                        <input class="form-inputs" type="email" id="email" placeholder="Email" title="Email">
+                        <input class="form-inputs" type="password" placeholder="Password" name="password" id="password">
+                        <input class="form-inputs" type="password" placeholder="Confirm Password" name="conf_password"
+                            id="conf_password">
+                        <button id="form-submit-btn">Login</button>
+                        <label id="form-submit-btn-label" for="form-submit-btn"></label>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CREATE / EDIT LAYOUT -->
+        <div class="floating-containers" id="new-layout-container">
+            <div class="inner-floating-containers" id="new-layout-inner-container">
+                <div class="container-header" id="new-layout-container-header">
+                    <input id="new-layout-name-p" placeholder="New_Layout_Name">
+
+                </div>
+
+                <div class="inner-containers" id="new-layout-options-inner-container">
+                    <!-- GENERATED -->
+                </div>
+                <div class="inner-containers" id="new-layout-submit-cancel-ic">
+                    <button class="new-layout-sc-btns" id="new-layout-cancel">Cancel</button>
+                    <button class="new-layout-sc-btns" id="new-layout-submit">Create Layout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW LAYOUTS -->
+        <div class="outer-containers" id="layouts-container">
+            <div class="container-header" id="layouts-container-header">
+                <h1>Layouts</h1>
+                <span id="current-layout-span">Current: </span>
+            </div>
+            <div class="inner-containers" id="layouts-inner-container">
+                <!-- GENERATED -->
+            </div>
+            <div class="inner-containers" id="new-layout-btn-container">
+                <button class="btn-style" id="new-layout-btn">+ New Layout</button>
+                <select id="layout-set-dd"></select>
+                <label>&lt;&#8211;&#8211; Set Layout</label>
+            </div>
+        </div>
+        <!-- VOICE COMMANDS -->
+        <div class="outer-containers" id="vc-container">
+            <div class="container-header" id="vc-container-header">
+                <h1>Voice Commands</h1>
+            </div>
+            <div class="inner-containers" id="vc-inner-outer-container">
+                <div class="inner-containers" id="vc-inner-container">
+
+                </div>
+                <div class="inner-containers" id="vc-controls-inner-container">
+                    <!-- <div class="inner-containers" id="vc-controls-dd"> -->
+                    <select id="vc-controls-dd">
+                        <option value="0">Mirror_On</option>
+                        <option value="1">Mirror_Off</option>
+                        <option value="2">LED_On</option>
+                        <option value="3">LED_Off</option>
+                        <option value="4">Custom1</option>
+                        <option value="5">Custom2</option>
+                        <option value="6">Custom3</option>
+                    </select>
+                    <button id="vc-controls-submit" class="record-vc-btn">Record VC</button>
+                    <!-- <button onclick="window.location.reload()">Reload</button> -->
+                    <label>STATUS: </label>
+                    <span id="vc-status-update"></span>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- SETTINGS -->
+        <button id="settings-btn">Settings</button>
+        <div class="floating-containers right-floating-container" id="settings-container" style="visibility:hidden">
+            <div class="inner-floating-containers" id="settings-inner-floating-container">
+                <div class="container-header" id="setttings-container-header">
+                    <h1>Settings</h1>
+                </div>
+                <div class="inner-containers" id="settings-inner-container">
+                    <button id="sign-out-btn">SIGN OUT</button>
+                    <select id="mirror_id_dd">
+                        <option>Choose a mirror</option>
+                        <option id="mirror_id_user_id" value="Aph0">Aph0</option>
+                    </select>
+                    <button id="sign-out-cancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+
+</html>
